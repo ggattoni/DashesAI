@@ -54,11 +54,11 @@ public class AIma {
 	 * @param time
 	 *            Maximal computation time in seconds.
 	 */
-	public AIma(State game, double utilMin, double utilMax, int time) {
+	public AIma(State game, double utilMin, double utilMax, long millis) {
 		this.game = game;
 		this.utilMin = utilMin;
 		this.utilMax = utilMax;
-		this.timer = new Timer(time);
+		this.timer = new Timer(millis);
 	}
 
 	public void setLogEnabled(boolean b) {
@@ -302,8 +302,8 @@ public class AIma {
 		private long duration;
 		private long startTime;
 
-		Timer(int maxSeconds) {
-			this.duration = 1000 * maxSeconds;
+		Timer(long milliSeconds) {
+			this.duration = milliSeconds;
 		}
 
 		void start() {
