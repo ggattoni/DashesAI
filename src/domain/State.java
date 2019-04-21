@@ -62,7 +62,7 @@ public class State {
 	}
 
 	public State result(Action a) throws AlreadySignedException {
-		for (int i = a.getCol(); i < a.getQuantity(); i++) {
+		for (int i = a.getCol(); i < a.getCol() + a.getQuantity(); i++) {
 			if (this.isSigned(a.getRow(), i)) {
 				throw new AlreadySignedException("You're trying to delete dashes already signed");
 			}
@@ -206,72 +206,77 @@ public class State {
 		System.out.println(s);
 		System.out.println("Mosse possibili: " + s.actions().size());
 		System.out.println();
-
-		Action a = new Action(5, 1, 4);
+		
+		Action a = new Action(1, 1, 1);
 		s = s.result(a);
 		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
+		System.out.println(s.isSigned(1, 1));
 
-		a = new Action(0, 0, 1);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(3, 1, 1);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(3, 0, 1);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(3, 2, 2);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(5, 0, 1);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(4, 0, 5);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(5, 5, 1);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(2, 2, 1);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(1, 0, 2);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println();
-
-		a = new Action(2, 0, 2);
-		s = s.result(a);
-		System.out.println(s);
-		System.out.println("Mosse possibili: " + s.actions().size());
-		System.out.println(s.winner());
-		System.out.println();
+//		Action a = new Action(5, 1, 4);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(0, 0, 1);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(3, 1, 1);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(3, 0, 1);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(3, 2, 2);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(5, 0, 1);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(4, 0, 5);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(5, 5, 1);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(2, 2, 1);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(1, 0, 2);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println();
+//
+//		a = new Action(2, 0, 2);
+//		s = s.result(a);
+//		System.out.println(s);
+//		System.out.println("Mosse possibili: " + s.actions().size());
+//		System.out.println(s.winner());
+//		System.out.println();
 	}
 }
